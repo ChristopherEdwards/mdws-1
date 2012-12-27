@@ -1,4 +1,4 @@
-#region CopyrightHeader
+﻿#region CopyrightHeader
 //
 //  Copyright by Contributors
 //
@@ -16,7 +16,7 @@
 //
 #endregion
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using gov.va.medora.mdo;

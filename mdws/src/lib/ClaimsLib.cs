@@ -1,4 +1,4 @@
-#region CopyrightHeader
+﻿#region CopyrightHeader
 //
 //  Copyright by Contributors
 //
@@ -16,7 +16,7 @@
 //
 #endregion
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
@@ -250,8 +250,7 @@ namespace gov.va.medora.mdws
                 {
                     PersonTO pto = new PersonTO(p);
                     DemographicsRecord rec = new DemographicsRecord(pto, source);
-                    //long hashcode = new TOReflection.TOEqualizer(rec).HashCode;
-					long hashcode = new long();
+                    long hashcode = new TOReflection.TOEqualizer(rec).HashCode;
                     if (!ht.ContainsKey(hashcode))
                     {
                         ht.Add(hashcode, rec);

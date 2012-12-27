@@ -58,7 +58,7 @@ namespace gov.va.medora.mdws
 
             try
             {
-                _siteTable = new mdo.SiteTable(Path.Combine(_mdwsConfig.ResourcesPath, "xml", _mdwsConfig.FacadeConfiguration.SitesFileName));
+                _siteTable = new mdo.SiteTable(_mdwsConfig.ResourcesPath + "xml\\" + _mdwsConfig.FacadeConfiguration.SitesFileName);
             }
             catch (Exception) { /* SiteTable is going to be null - how do we let the user know?? */ }
         }
@@ -80,8 +80,8 @@ namespace gov.va.medora.mdws
 
             try
             {
-                _siteTable = new mdo.SiteTable(Path.Combine(_mdwsConfig.ResourcesPath, "xml", _mdwsConfig.FacadeConfiguration.SitesFileName));
-                watchSitesFile(Path.Combine(_mdwsConfig.ResourcesPath, "xml"));
+                _siteTable = new mdo.SiteTable(_mdwsConfig.ResourcesPath + "xml\\" + _mdwsConfig.FacadeConfiguration.SitesFileName);
+                watchSitesFile(_mdwsConfig.ResourcesPath + "xml\\");
             }
             catch (Exception) { /* SiteTable is going to be null - how do we let the user know?? */ }
         }
@@ -96,9 +96,9 @@ namespace gov.va.medora.mdws
             SiteArray result = new SiteArray();
             try
             {
-                _siteTable = new mdo.SiteTable(Path.Combine(_mdwsConfig.ResourcesPath, "xml", sitesFileName));
+                _siteTable = new mdo.SiteTable(_mdwsConfig.ResourcesPath + "xml\\" + sitesFileName);
                 _mdwsConfig.FacadeConfiguration.SitesFileName = sitesFileName;
-                watchSitesFile(Path.Combine(_mdwsConfig.ResourcesPath, "xml"));
+                watchSitesFile(_mdwsConfig.ResourcesPath + "xml\\");
                 result = new SiteArray(_siteTable.Sites);
             }
             catch (Exception)
@@ -254,7 +254,7 @@ namespace gov.va.medora.mdws
 
         void watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            _siteTable = new SiteTable(Path.Combine(_mdwsConfig.ResourcesPath, "xml", _mdwsConfig.FacadeConfiguration.SitesFileName));
+            _siteTable = new SiteTable(_mdwsConfig.ResourcesPath + "xml\\" + _mdwsConfig.FacadeConfiguration.SitesFileName);
         }
 
     }
